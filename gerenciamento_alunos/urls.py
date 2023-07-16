@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.index, name='index'),
+    path('cadastroaluno/', views.CadastroAluno, name='cadastroaluno'),
+    path('alunoscadastrados/', views.AlunosCadastrados, name='alunoscadastrados'),
 
 ]
