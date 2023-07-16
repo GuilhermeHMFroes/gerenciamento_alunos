@@ -8,6 +8,61 @@
 
 {% block content %}
 
-    <h1>alunos_cadastrados</h1>
+    <br>
+
+    <h1 class="text-center">ALUNOS CADASTRADOS</h1>
+
+    <br>
+
+    <table class="table table-bordered text-center align-middle">
+
+        <thead>
+
+            <tr>
+
+                <th>Aluno</th>
+                <th>Idade</th>
+                <th>Curso</th>
+                <th>Data de Ingresso</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for aluno in alunos %}
+
+                <tr>
+
+                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#modalFoto{{ aluno.id }}">{{ aluno.nome }}</a></td>
+                    <td>{{ aluno.idade }}</td>
+                    <td>{{ aluno.curso }}</td>
+                    <td>{{ aluno.dataIngresso }}</td>
+
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+        <!-- Modal -->
+{% for aluno in alunos %}
+    <div class="modal fade" id="modalFoto{{ aluno.id }}" tabindex="-1" aria-labelledby="modalFoto{{ aluno.id }}Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalFoto{{ aluno.id }}Label">Foto de {{ aluno.nome }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../../media/{{ aluno.foto }}" class="img-fluid" alt="Foto de {{ aluno.nome }}">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+    </table>
 
 {% endblock %}
