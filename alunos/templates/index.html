@@ -8,6 +8,29 @@
 
 {% block content %}
 
-    <h1>Index</h1>
+    <h1 class="text-center">Cadastro aluno</h1>
+
+    <p>É um sistema de cadastro de alunos, onde você pode cadastrar alunos com informações como nome, idade, curso,
+        data de nascimento, CPF, RG, data de ingresso e foto. Além disso, você pode visualizar uma lista dos alunos cadastrados.</p>
+
+    <p>A estrutura do sistema consiste em três páginas principais: main.html, cadastro_aluno.html e alunos_cadastrados.html.</p>
+
+    <p>A página main.html é o template base que contém o cabeçalho de navegação e o rodapé. Ela também inclui o CSS do Bootstrap e os scripts JavaScript
+    necessários. O cabeçalho de navegação possui links para a página inicial, cadastro de aluno, lista de alunos cadastrados e um link para acessar o
+    painel de administração do Django. O rodapé exibe o ano atual.</p>
+
+    <p>A página cadastro_aluno.html é responsável por exibir o formulário de cadastro de alunos. O formulário inclui campos para preencher as informações
+    do aluno, como nome, idade, curso, data de nascimento, CPF, RG, data de ingresso e foto. Também há espaço para exibir mensagens de validação ou sucesso
+    após o envio do formulário.</p>
+
+    <p>A página alunos_cadastrados.html exibe uma tabela com os alunos cadastrados. Cada linha da tabela exibe o nome, idade, curso e data de ingresso de
+    um aluno. O nome do aluno é um link que abre uma janela modal contendo a foto do aluno. A janela modal é gerada dinamicamente para cada aluno cadastrado.</p>
+
+    <p>No código HTML, você pode observar o uso de blocos do jinja para permitir a extensão de templates. Isso permite que você defina blocos específicos
+    de conteúdo em templates que herdam de outros templates. Nesse caso, os blocos head e content são definidos nos templates cadastro_aluno.html e
+    alunos_cadastrados.html para adicionar o título da página e o conteúdo específico, respectivamente.</p>
+
+    <p>No geral, o sistema fornece uma interface simples para cadastrar alunos e visualizar a lista de alunos cadastrados, permitindo que você visualize a
+    foto de cada aluno em uma janela modal.</p>
 
 {% endblock %}
